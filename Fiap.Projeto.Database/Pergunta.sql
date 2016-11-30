@@ -6,7 +6,8 @@
     [Descricao] TEXT NOT NULL, 
     [Tag] VARCHAR(25) NOT NULL, 
     [Data] DATETIME NOT NULL, 
-    [RespostaEscolhida] INT NULL,   
-    CONSTRAINT [FK_Pergunta_Aluno] FOREIGN KEY ([AlunoRm]) REFERENCES [Aluno]([Rm]), 
-    PRIMARY KEY ([Id], [AlunoRm])
+    [RespostaEscolhida] INT NULL, 
+	PRIMARY KEY ([Id], [AlunoRm]),  
+    CONSTRAINT [FK_Pergunta_Aluno] FOREIGN KEY ([AlunoRm]) REFERENCES [Aluno]([Rm])
+    
 )
