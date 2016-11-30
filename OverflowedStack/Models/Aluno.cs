@@ -7,7 +7,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace OverflowedStack.Models
+namespace Fiap.Projeto.Web.Models
 {
     using System;
     using System.Collections.Generic;
