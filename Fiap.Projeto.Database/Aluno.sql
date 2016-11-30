@@ -1,0 +1,6 @@
+﻿CREATE TABLE [dbo].[Aluno]
+(
+	[Rm] INT NOT NULL PRIMARY KEY, 
+    [Nome] VARCHAR(60) NOT NULL, 
+    [Senha] VARCHAR(16) NOT NULL
+)
