@@ -1,4 +1,4 @@
-﻿namespace OverflowedStack.Models
+﻿namespace Fiap.Projeto.Web
 {
     public class Autor
     {

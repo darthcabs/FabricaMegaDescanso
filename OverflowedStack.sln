@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 14
 VisualStudioVersion = 14.0.24720.0
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OverflowedStack", "OverflowedStack\OverflowedStack.csproj", "{B668C4B4-2E79-469E-BE00-1C694B200FDA}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Fiap.Projeto.Web", "OverflowedStack\Fiap.Projeto.Web.csproj", "{B668C4B4-2E79-469E-BE00-1C694B200FDA}"
 EndProject
 Project("{00D1A9C2-B5F0-4AF3-8072-F6C62B433612}") = "Fiap.Projeto.Database", "Fiap.Projeto.Database\Fiap.Projeto.Database.sqlproj", "{D25D8557-5015-43B4-ABDB-68CB31E566CF}"
 EndProject
