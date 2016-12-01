@@ -1,4 +1,5 @@
 ﻿using OverflowedStack.Models;
+using OverflowedStack.Repositories;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -10,9 +11,27 @@ namespace OverflowedStack.UnitsOfWork
     {
         #region Fields
         private Entidades _context = new Entidades();
+
+        //Aluno
+        private IGenericRepository<Aluno> _alunoRepository;
         #endregion
 
-        //Properties...
+        #region Properties
+        //Aluno
+        public IGenericRepository<Aluno> AlunoRepository
+        {
+            get
+            {
+                if (_alunoRepository == null)
+                {
+                    _alunoRepository = new GenericRepository<Aluno>(_context);
+                }
+                return _alunoRepository;
+            }
+        }
+
+
+        #endregion
 
         #region Save Changes
         public void Salvar()

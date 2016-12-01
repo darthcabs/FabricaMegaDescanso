@@ -1,4 +1,6 @@
-﻿using System;
+﻿using OverflowedStack.Models;
+using OverflowedStack.UnitsOfWork;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -8,10 +10,7 @@ namespace OverflowedStack.Controllers
 {
     public class AlunoController : Controller
     {
-        // GET: Aluno
-        public ActionResult Index()
-        {
-            return View();
-        }
+
+
     }
 }
