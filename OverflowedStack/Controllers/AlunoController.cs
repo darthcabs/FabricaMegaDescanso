@@ -20,6 +20,16 @@ namespace OverflowedStack.Controllers
         {
             return View();
         }
+
+        [HttpGet]
+        public ActionResult Listar()
+        {
+            var alunoViewModel = new AlunoViewModel()
+            {
+                Alunos = _unit.AlunoRepository.Listar()
+            };
+            return View(alunoViewModel);
+        }
         #endregion
 
         #region Post
