@@ -16,6 +16,7 @@ namespace OverflowedStack.Repositories
         public GenericRepository(Entidades context)
         {
             _context = context;
+            _dbSet = _context.Set<T>();
         }
 
         public virtual void Alterar(T entidade)
