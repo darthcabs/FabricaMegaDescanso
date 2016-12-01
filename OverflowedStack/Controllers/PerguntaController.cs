@@ -4,7 +4,7 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 
-namespace Fiap.Projeto.Web.Controllers
+namespace OverflowedStack.Controllers
 {
     public class PerguntaController : Controller
     {

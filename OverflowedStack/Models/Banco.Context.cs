@@ -7,7 +7,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace Fiap.Projeto.Web.Models
+namespace OverflowedStack.Models
 {
     using System;
     using System.Data.Entity;
