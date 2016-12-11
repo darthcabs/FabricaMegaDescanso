@@ -10,6 +10,8 @@ namespace OverflowedStack.ViewModels
     {
 
         public ICollection<Pergunta> Perguntas { get; set; }
+        public String NomeAluno { get; set; }
+
 
         #region Pergunta Properties
         public int AlunoRm { get; set; }

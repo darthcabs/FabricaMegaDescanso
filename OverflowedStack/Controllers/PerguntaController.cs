@@ -13,22 +13,18 @@ namespace OverflowedStack.Controllers
     {
         private UnitOfWork _unit = new UnitOfWork();
 
-        private int _id=1;
-
-        public int GetID
-        {
-            get { return _id; }
-            set { _id = _id++; }
-        }
+        private static int _id = 1;
 
 
         #region Get
         [HttpGet]
         public ActionResult Cadastrar(int rm)
         {
+            var aluno = _unit.AlunoRepository.BuscarPorId(rm);
             var perguntaViewModel = new PerguntaViewModel()
             {
-                AlunoRm = rm
+                AlunoRm = rm,
+                NomeAluno = aluno.Nome 
             };
 
             return View(perguntaViewModel);
@@ -51,7 +47,7 @@ namespace OverflowedStack.Controllers
         {
             var pergunta = new Pergunta()
             {
-                Id = GetID,
+                Id = _id++,
                 AlunoRm = perguntaViewModel.AlunoRm,
                 Titulo = perguntaViewModel.Titulo,
                 Descricao = perguntaViewModel.Descricao,
@@ -60,7 +56,7 @@ namespace OverflowedStack.Controllers
             };
             _unit.PerguntaRepository.Cadastrar(pergunta);
             _unit.Salvar();
-            return View("Listar");
+            return RedirectToAction("Listar");
         }
         #endregion
 

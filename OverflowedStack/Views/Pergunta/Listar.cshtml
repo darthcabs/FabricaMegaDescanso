@@ -1,7 +1,30 @@
-﻿
+﻿@model OverflowedStack.ViewModels.PerguntaViewModel
 @{
     ViewBag.Title = "Listar";
 }
 
 <h2>Listar</h2>
 
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th>Autor</th>
+            <th>Rm</th>
+            <th>Data</th>
+            <th>Titulo</th>
+            <th>Tags</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model.Perguntas)
+        {
+            <tr>
+                <td>@item.Aluno<d>
+                <td>@item.AlunoRm</td>
+                <td>@item.Data</td>
+                <td>@item.Titulo</td>
+                <td>@item.Tag</td>         
+            </tr>
+        }
+    </tbody>
+</table>
