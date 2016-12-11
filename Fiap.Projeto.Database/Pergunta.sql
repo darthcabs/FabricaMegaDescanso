@@ -1,6 +1,6 @@
 ﻿CREATE TABLE [dbo].[Pergunta]
 (
-	[Id] INT NOT NULL IDENTITY , 
+	[Id] INT NOT NULL , 
 	[AlunoRm] INT NOT NULL, 
     [Titulo] VARCHAR(25) NOT NULL, 
     [Descricao] TEXT NOT NULL, 
