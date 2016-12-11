@@ -104,16 +104,6 @@
     <Content Include="Content\Site.css" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
-    <Content Include="Models\Banco.Context.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>Banco.edmx</DependentUpon>
-      <LastGenOutput>Banco.Context.cs</LastGenOutput>
-    </Content>
-    <Content Include="Models\Banco.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>Banco.edmx</DependentUpon>
-      <LastGenOutput>Banco.cs</LastGenOutput>
-    </Content>
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
@@ -130,46 +120,12 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Models\Aluno.cs">
-      <DependentUpon>Banco.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\Banco.Context.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Banco.Context.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\Banco.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Banco.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\Banco.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Banco.edmx</DependentUpon>
-    </Compile>
-    <Compile Include="Models\Pergunta.cs">
-      <DependentUpon>Banco.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\Resposta.cs">
-      <DependentUpon>Banco.tt</DependentUpon>
-    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Repositories\GenericRepository.cs" />
-    <Compile Include="Repositories\IGenericRepository.cs" />
-    <Compile Include="UnitsOfWork\UnitOfWork.cs" />
     <Compile Include="ViewModels\AlunoViewModel.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Views\web.config" />
     <Content Include="packages.config" />
-    <EntityDeploy Include="Models\Banco.edmx">
-      <Generator>EntityModelCodeGenerator</Generator>
-      <LastGenOutput>Banco.Designer.cs</LastGenOutput>
-    </EntityDeploy>
-    <Content Include="Models\Banco.edmx.diagram">
-      <DependentUpon>Banco.edmx</DependentUpon>
-    </Content>
     <Content Include="Views\_ViewStart.cshtml" />
     <Content Include="Views\Shared\_Layout.cshtml" />
     <Content Include="Views\Aluno\Cadastrar.cshtml" />
@@ -192,6 +148,16 @@
   </ItemGroup>
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Fiap.Projeto.Dominio\Fiap.Projeto.Dominio.csproj">
+      <Project>{8d2abcbb-3079-4275-999c-2547c8859da7}</Project>
+      <Name>Fiap.Projeto.Dominio</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Fiap.Projeto.Repositories\Fiap.Projeto.Repositories.csproj">
+      <Project>{367c8810-f6b5-48fa-9209-e22b3435b29f}</Project>
+      <Name>Fiap.Projeto.Repositories</Name>
+    </ProjectReference>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

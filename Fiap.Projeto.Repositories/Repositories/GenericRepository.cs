@@ -5,7 +5,7 @@ using System.Data.Entity;
 using System.Linq;
 using System.Web;
 
-namespace OverflowedStack.Repositories
+namespace Fiap.Projeto.Repositories.Repositories
 {
     public class GenericRepository<T> : IGenericRepository<T> where T : class
     {

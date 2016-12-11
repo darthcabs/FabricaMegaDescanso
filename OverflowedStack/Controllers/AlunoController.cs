@@ -1,11 +1,13 @@
-﻿using OverflowedStack.Models;
-using OverflowedStack.UnitsOfWork;
+﻿using Fiap.Projeto.Dominio.Models;
+using OverflowedStack.Models;
+using Fiap.Projeto.Repositories;
 using OverflowedStack.ViewModels;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using Fiap.Projeto.Repositories.UnitsOfWork;
 
 namespace OverflowedStack.Controllers
 {

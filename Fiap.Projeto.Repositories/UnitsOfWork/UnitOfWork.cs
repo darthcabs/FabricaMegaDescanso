@@ -1,11 +1,12 @@
-﻿using OverflowedStack.Models;
-using OverflowedStack.Repositories;
+﻿using Fiap.Projeto.Dominio.Models;
+using OverflowedStack.Models;
+using Fiap.Projeto.Repositories.Repositories;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 
-namespace OverflowedStack.UnitsOfWork
+namespace Fiap.Projeto.Repositories.UnitsOfWork
 {
     public class UnitOfWork : IDisposable
     {

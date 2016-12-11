@@ -7,26 +7,28 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace OverflowedStack.Models
+namespace Fiap.Projeto.Dominio.Models
 {
     using System;
     using System.Collections.Generic;
     
-    public partial class Aluno
+    public partial class Pergunta
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public Aluno()
+        public Pergunta()
         {
-            this.Pergunta = new HashSet<Pergunta>();
             this.Resposta = new HashSet<Resposta>();
         }
     
-        public int Rm { get; set; }
-        public string Nome { get; set; }
-        public string Senha { get; set; }
+        public int Id { get; set; }
+        public int AlunoRm { get; set; }
+        public string Titulo { get; set; }
+        public string Descricao { get; set; }
+        public string Tag { get; set; }
+        public System.DateTime Data { get; set; }
+        public Nullable<int> RespostaEscolhida { get; set; }
     
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Pergunta> Pergunta { get; set; }
+        public virtual Aluno Aluno { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Resposta> Resposta { get; set; }
     }

@@ -5,7 +5,7 @@ using System.Linq.Expressions;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace OverflowedStack.Repositories
+namespace Fiap.Projeto.Repositories.Repositories
 {
     public interface IGenericRepository<T>
     {
