@@ -15,6 +15,12 @@ namespace Fiap.Projeto.Repositories.UnitsOfWork
 
         //Aluno
         private IGenericRepository<Aluno> _alunoRepository;
+
+        //Pergunta
+        private IGenericRepository<Pergunta> _perguntaRepository;
+
+        //resposta
+        private IGenericRepository<Resposta> _respostaRepository;
         #endregion
 
         #region Properties
@@ -30,6 +36,34 @@ namespace Fiap.Projeto.Repositories.UnitsOfWork
                 return _alunoRepository;
             }
         }
+
+        //Pergunta
+        public IGenericRepository<Pergunta>  PerguntaRepository
+        {
+            get
+            {
+                if (_perguntaRepository == null)
+                {
+                    _perguntaRepository = new GenericRepository<Pergunta>(_context);
+                }
+                return _perguntaRepository;
+            }            
+        }
+
+
+        //Resposta
+        public IGenericRepository<Resposta> RespostaRepository
+        {
+            get
+            {
+                if(_respostaRepository == null)
+                {
+                    _respostaRepository = new GenericRepository<Resposta>(_context);
+                }
+                return _respostaRepository;
+            }
+        } 
+
 
 
         #endregion

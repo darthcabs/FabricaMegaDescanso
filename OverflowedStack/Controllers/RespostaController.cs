@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Fiap.Projeto.Repositories.UnitsOfWork;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -8,10 +9,16 @@ namespace OverflowedStack.Controllers
 {
     public class RespostaController : Controller
     {
-        // GET: Resposta
-        public ActionResult Index()
+        private UnitOfWork _unit = new UnitOfWork();
+
+        
+
+        #region Dispose
+        protected override void Dispose(bool disposing)
         {
-            return View();
+            _unit.Dispose();
+            base.Dispose(disposing);
         }
+        #endregion
     }
 }
