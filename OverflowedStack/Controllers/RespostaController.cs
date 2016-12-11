@@ -11,7 +11,27 @@ namespace OverflowedStack.Controllers
     {
         private UnitOfWork _unit = new UnitOfWork();
 
-        
+        #region Get
+        [HttpGet]
+        public ActionResult Cadastrar(int id)
+        {
+            return View();
+        }
+
+        [HttpGet]
+        public ActionResult Listar()
+        {
+            return View();
+        }
+        #endregion
+
+        #region Post
+        [HttpPost]
+        public ActionResult Cadastrar()
+        {
+            return View();
+        }
+        #endregion
 
         #region Dispose
         protected override void Dispose(bool disposing)
