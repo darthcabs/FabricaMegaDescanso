@@ -1,4 +1,7 @@
-﻿using System;
+﻿using OverflowedStack.Models;
+using OverflowedStack.UnitsOfWork;
+using OverflowedStack.ViewModels;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -8,10 +11,50 @@ namespace OverflowedStack.Controllers
 {
     public class AlunoController : Controller
     {
-        // GET: Aluno
-        public ActionResult Index()
+
+        private UnitOfWork _unit = new UnitOfWork();
+
+        #region Get
+        [HttpGet]
+        public ActionResult Cadastrar()
         {
             return View();
         }
+
+        [HttpGet]
+        public ActionResult Listar()
+        {
+            var alunoViewModel = new AlunoViewModel()
+            {
+                Alunos = _unit.AlunoRepository.Listar()
+            };
+            return View(alunoViewModel);
+        }
+        #endregion
+
+        #region Post
+        [HttpPost]
+        public ActionResult Cadastrar(AlunoViewModel alunoViewModel)
+        {
+            var aluno = new Aluno()
+            {
+                Rm = alunoViewModel.Rm,
+                Nome = alunoViewModel.Nome,
+                Senha = alunoViewModel.Senha
+            };
+            _unit.AlunoRepository.Cadastrar(aluno);
+            _unit.Salvar();
+            return RedirectToAction("Cadastrar");
+        }
+        #endregion
+
+        #region Dispose
+        protected override void Dispose(bool disposing)
+        {
+            _unit.Dispose();
+            base.Dispose(disposing);
+        }
+        #endregion
+
     }
 }

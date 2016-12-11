@@ -1,0 +1,26 @@
+﻿@model OverflowedStack.ViewModels.AlunoViewModel
+@{
+    ViewBag.Title = "Listar";
+}
+
+<h2>Listar</h2>
+
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th>Nome</th>
+            <th>RM</th>         
+            <th></th>
+        </tr>
+    </thead>
+    <tbody id="tabela">
+        @foreach (var item in Model.Alunos)
+        {
+            <tr>
+                <td>@item.Nome<d>
+                <td>@item.Rm</td>
+                <td></td>
+            </tr>
+        }
+    </tbody>
+</table>

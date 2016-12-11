@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace OverflowedStack.Repositories
 {
-    interface IGenericRepository<T>
+    public interface IGenericRepository<T>
     {
 
         void Cadastrar(T entidade);
