@@ -1,4 +1,4 @@
-﻿@model OverflowedStack.ViewModels.PerguntaViewModel
+﻿@model OverflowedStack.ViewModels.RespostaViewModel
 @{
     ViewBag.Title = "Listar";
 }
@@ -11,19 +11,17 @@
             <th>Autor</th>
             <th>Rm</th>
             <th>Data</th>
-            <th>Titulo</th>
-            <th>Tags</th>
+            <th>Descrição</th>
         </tr>
     </thead>
     <tbody>
-        @foreach (var item in Model.Perguntas)
+        @foreach (var item in Model.Respostas)
         {
             <tr>
                 <td>@item.Aluno.Nome<d>
                 <td>@item.AlunoRm</td>
                 <td>@item.Data</td>
-                <td>@item.Titulo</td>
-                <td>@item.Tag</td>         
+                <td>@item.Descricao</td>
             </tr>
         }
     </tbody>

@@ -12,10 +12,11 @@ namespace OverflowedStack.Controllers
     public class RespostaController : Controller
     {
         private UnitOfWork _unit = new UnitOfWork();
+        private static int _id = 1;
 
         #region Get
         [HttpGet]
-        public ActionResult Cadastrar(int id, int autor)
+        public ActionResult Cadastrar(int id,int autor)
         {
             var respostaViewModel = new RespostaViewModel()
             {
@@ -29,7 +30,11 @@ namespace OverflowedStack.Controllers
         [HttpGet]
         public ActionResult Listar()
         {
-            return View();
+            var respostaViewModel = new RespostaViewModel()
+            {
+                Respostas = _unit.RespostaRepository.Listar()
+            };
+            return View(respostaViewModel);
         }
         #endregion
 
@@ -38,8 +43,8 @@ namespace OverflowedStack.Controllers
         public ActionResult Cadastrar(RespostaViewModel respostaViewModel)
         {
             var resposta = new Resposta()
-            {               
-                Id = 1,
+            {
+                Id = _id++,
                 PerguntaId = respostaViewModel.PerguntaId,
                 Autor = respostaViewModel.Autor,
                 AlunoRm = 12345,
@@ -50,7 +55,7 @@ namespace OverflowedStack.Controllers
             _unit.RespostaRepository.Cadastrar(resposta);
             _unit.Salvar();
 
-            return RedirectToAction("Cadastrar");
+            return RedirectToAction("Listar");
         }
         #endregion
 

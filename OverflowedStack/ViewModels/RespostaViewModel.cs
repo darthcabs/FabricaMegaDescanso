@@ -10,6 +10,7 @@ namespace OverflowedStack.ViewModels
     {
 
         public ICollection<Resposta> Respostas { get; set; }
+        public string NomeAluno { get; set; }
 
         #region Resposta Properties
 
