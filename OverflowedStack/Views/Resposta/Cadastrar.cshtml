@@ -1,0 +1,17 @@
+﻿@model OverflowedStack.ViewModels.RespostaViewModel
+@{
+    ViewBag.Title = "Cadastrar";
+}
+
+<h2>Cadastrar uma resposta</h2>
+
+@using (Html.BeginForm())
+{
+    @Html.HiddenFor(r => r.PerguntaId)
+    @Html.HiddenFor(r => r.Autor)
+    <div class="form-group">
+        @Html.LabelFor(r => r.Descricao)
+        @Html.TextAreaFor(r => r.Descricao)
+    </div>
+    <input type="submit" value="Salvar" class="btn btn-success" />
+}

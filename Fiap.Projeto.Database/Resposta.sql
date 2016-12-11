@@ -1,6 +1,6 @@
 ﻿CREATE TABLE [dbo].[Resposta]
 (
-	[Id] INT NOT NULL IDENTITY , 
+	[Id] INT NOT NULL , 
 	[PerguntaId] INT NOT NULL,
 	[Autor] INT NOT NULL,
 	[AlunoRm] INT NOT NULL,

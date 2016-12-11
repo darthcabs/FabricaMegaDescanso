@@ -14,6 +14,7 @@ namespace OverflowedStack.ViewModels
         #region Resposta Properties
 
         public int PerguntaId { get; set; }
+        public int Autor { get; set; }
         public int AlunoRm { get; set; }
         public string Descricao { get; set; }
         public System.DateTime Data { get; set; }

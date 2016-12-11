@@ -1,4 +1,6 @@
-﻿using Fiap.Projeto.Repositories.UnitsOfWork;
+﻿using Fiap.Projeto.Dominio.Models;
+using Fiap.Projeto.Repositories.UnitsOfWork;
+using OverflowedStack.ViewModels;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -13,9 +15,15 @@ namespace OverflowedStack.Controllers
 
         #region Get
         [HttpGet]
-        public ActionResult Cadastrar(int id)
+        public ActionResult Cadastrar(int id, int autor)
         {
-            return View();
+            var respostaViewModel = new RespostaViewModel()
+            {
+                PerguntaId = id,
+                Autor = autor
+            };
+
+            return View(respostaViewModel);
         }
 
         [HttpGet]
@@ -27,9 +35,22 @@ namespace OverflowedStack.Controllers
 
         #region Post
         [HttpPost]
-        public ActionResult Cadastrar()
+        public ActionResult Cadastrar(RespostaViewModel respostaViewModel)
         {
-            return View();
+            var resposta = new Resposta()
+            {               
+                Id = 1,
+                PerguntaId = respostaViewModel.PerguntaId,
+                Autor = respostaViewModel.Autor,
+                AlunoRm = 12345,
+                Descricao = respostaViewModel.Descricao,
+                Data = DateTime.Now
+            };
+
+            _unit.RespostaRepository.Cadastrar(resposta);
+            _unit.Salvar();
+
+            return RedirectToAction("Cadastrar");
         }
         #endregion
 
