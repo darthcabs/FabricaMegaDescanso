@@ -2,38 +2,42 @@
 @{
     ViewBag.Title = "Listar";
 }
-
-<h2>Listar</h2>
-
 <div class="container">
     <div>
-        <p>@Model.Pergunta.Aluno.Nome</p>
-        <p>@Model.Pergunta.AlunoRm</p>
-        <p>@Model.Pergunta.Titulo</p>
-        <p>@Model.Pergunta.Tag</p>
-        <p>@Model.Pergunta.Descricao</p>
-        <p>@Model.Pergunta.Data</p>        
+        <div class="col-md-4 box">
+            <h1>@Model.Pergunta.Aluno.Nome</h1>
+            <p class="gray">RM @Model.Pergunta.AlunoRm</p>
+        </div>
+        <div class="col-md-8 box">
+            <h2>@Model.Pergunta.Titulo</h2>
+            <p class="gray">@Model.Pergunta.Tag</p>
+        </div>
+        <div class="col-md-12 box">
+            <h3>Descrição</h3>
+            <p class="descricao">@Model.Pergunta.Descricao</p>
+            <p class="gray lado">@Model.Pergunta.Data</p>
+        </div>
     </div>
-
-<table class="table table-striped">
-    <thead>
-        <tr>
-            <th>Autor</th>
-            <th>Rm</th>
-            <th>Data</th>
-            <th>Descrição</th>
-        </tr>
-    </thead>
-    <tbody>
-        @foreach (var item in Model.Respostas)
-        {
+    <div id="idLinha"></div>
+    <table class="table table-striped">
+        <thead>
             <tr>
-                <td>@item.Aluno.Nome<d>
-                <td>@item.AlunoRm</td>
-                <td>@item.Data</td>
-                <td>@item.Descricao</td>
+                <th>Autor</th>
+                <th>Rm</th>
+                <th>Data</th>
+                <th>Descrição</th>
             </tr>
-        }
-    </tbody>
-</table>
+        </thead>
+        <tbody>
+            @foreach (var item in Model.Respostas)
+            {
+                <tr>
+                    <td>@item.Aluno.Nome<d>
+                    <td>@item.AlunoRm</td>
+                    <td>@item.Data</td>
+                    <td>@item.Descricao</td>
+                </tr>
+            }
+        </tbody>
+    </table>
 </div>
