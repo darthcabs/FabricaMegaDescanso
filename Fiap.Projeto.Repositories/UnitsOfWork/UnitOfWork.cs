@@ -17,7 +17,7 @@ namespace Fiap.Projeto.Repositories.UnitsOfWork
         private IGenericRepository<Aluno> _alunoRepository;
 
         //Pergunta
-        private IGenericRepository<Pergunta> _perguntaRepository;
+        private IPerguntaRepository _perguntaRepository;
 
         //resposta
         private IGenericRepository<Resposta> _respostaRepository;
@@ -38,13 +38,13 @@ namespace Fiap.Projeto.Repositories.UnitsOfWork
         }
 
         //Pergunta
-        public IGenericRepository<Pergunta>  PerguntaRepository
+        public IPerguntaRepository PerguntaRepository
         {
             get
             {
                 if (_perguntaRepository == null)
                 {
-                    _perguntaRepository = new GenericRepository<Pergunta>(_context);
+                    _perguntaRepository = new PerguntaRepository(_context);
                 }
                 return _perguntaRepository;
             }            

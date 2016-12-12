@@ -28,11 +28,13 @@ namespace OverflowedStack.Controllers
         }
 
         [HttpGet]
-        public ActionResult Listar()
+        public ActionResult Listar(int id,int rm)
         {
+            var pergunta = _unit.PerguntaRepository.BuscarPorChave(id, rm);
             var respostaViewModel = new RespostaViewModel()
             {
-                Respostas = _unit.RespostaRepository.Listar()
+                Respostas = _unit.RespostaRepository.Listar(),
+                Pergunta = pergunta
             };
             return View(respostaViewModel);
         }

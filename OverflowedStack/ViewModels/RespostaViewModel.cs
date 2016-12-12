@@ -8,7 +8,7 @@ namespace OverflowedStack.ViewModels
 {
     public class RespostaViewModel
     {
-
+        public Pergunta Pergunta { get; set; }
         public ICollection<Resposta> Respostas { get; set; }
         public string NomeAluno { get; set; }
 
