@@ -16,12 +16,12 @@ namespace OverflowedStack.Controllers
 
         #region Get
         [HttpGet]
-        public ActionResult Cadastrar(int id,int autor)
+        public ActionResult Cadastrar(int id,int rm)
         {
             var respostaViewModel = new RespostaViewModel()
             {
                 PerguntaId = id,
-                Autor = autor
+                Autor = rm
             };
 
             return View(respostaViewModel);
@@ -57,7 +57,7 @@ namespace OverflowedStack.Controllers
             _unit.RespostaRepository.Cadastrar(resposta);
             _unit.Salvar();
 
-            return RedirectToAction("Listar");
+            return RedirectToAction("Listar", new { id = respostaViewModel.PerguntaId, rm = respostaViewModel.Autor });
         }
         #endregion
 
