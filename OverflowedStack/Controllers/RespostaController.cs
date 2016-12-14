@@ -31,11 +31,13 @@ namespace OverflowedStack.Controllers
         public ActionResult Listar(int id,int rm)
         {
             var pergunta = _unit.PerguntaRepository.BuscarPorChave(id, rm);
+
             var respostaViewModel = new RespostaViewModel()
             {
-                Respostas = _unit.RespostaRepository.Listar(),
+                Respostas = _unit.RespostaRepository.BuscarPor(r => r.PerguntaId == id),
                 Pergunta = pergunta
             };
+
             return View(respostaViewModel);
         }
         #endregion
