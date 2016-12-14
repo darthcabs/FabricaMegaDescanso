@@ -1,6 +1,7 @@
 ﻿using Fiap.Projeto.Dominio.Models;
 using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Web;
 
@@ -16,7 +17,9 @@ namespace OverflowedStack.ViewModels
 
         public int PerguntaId { get; set; }
         public int Autor { get; set; }
+        [Display(Name = "RM")]
         public int AlunoRm { get; set; }
+        [Display(Name = "Descrição")]
         public string Descricao { get; set; }
         public System.DateTime Data { get; set; }
 
