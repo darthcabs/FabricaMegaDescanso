@@ -105,6 +105,11 @@
     <Content Include="Content\Site.css" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
+    <Content Include="Images\Moqups - Feed.png" />
+    <Content Include="Images\Moqups - Home.png" />
+    <Content Include="Images\Moqups - InfoUser.png" />
+    <Content Include="Images\Moqups - Login.png" />
+    <Content Include="Images\Moqups - Pergunte.png" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
@@ -116,6 +121,7 @@
   <ItemGroup>
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\AlunoController.cs" />
+    <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\PerguntaController.cs" />
     <Compile Include="Controllers\RespostaController.cs" />
     <Compile Include="Global.asax.cs">
@@ -141,6 +147,7 @@
     <Content Include="Views\Pergunta\Cadastrar.cshtml" />
     <Content Include="Views\Pergunta\Listar.cshtml" />
     <Content Include="Views\Resposta\Listar.cshtml" />
+    <Content Include="Views\Home\Index.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
