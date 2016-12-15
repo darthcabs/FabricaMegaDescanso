@@ -1,0 +1,46 @@
+﻿@model Fiap.Projeto.Web.MVC.ViewModels.RespostaViewModel
+@{
+    ViewBag.Title = "Listar";
+}
+<div class="container">
+    <div>
+        <div class="col-md-4 box">
+            <h1>@Model.Pergunta.Aluno.Nome</h1>
+            <p class="gray">RM @Model.Pergunta.AlunoRm</p>
+        </div>
+        <div class="col-md-8 box">
+            <h2>@Model.Pergunta.Titulo</h2>
+            <p class="gray">@Model.Pergunta.Tag</p>
+        </div>
+        <div class="col-md-12 box">
+            <h3>Descrição</h3>
+            <p class="descricao">@Model.Pergunta.Descricao</p>
+            <p class="gray lado">@Model.Pergunta.Data</p>
+        </div>
+    </div>
+    <div id="idLinha"></div>
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th>Autor</th>
+                <th>RM</th>
+                <th>Data</th>
+                <th>Descrição</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model.Respostas)
+            {
+                <tr>
+                    <td>@item.Aluno.Nome<d>
+                    <td>@item.AlunoRm</td>
+                    <td>@item.Data</td>
+                    <td>@item.Descricao</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+    <div>
+        <button class="btn btn-default"><a href="/Resposta/Cadastrar?id=@Model.Pergunta.Id&&rm=@Model.Pergunta.AlunoRm">Responder</a></button>
+    </div>
+</div>

@@ -1,0 +1,25 @@
+﻿@model OverflowedStack.ViewModels.AlunoViewModel
+@{
+    ViewBag.Title = "Cadastrar";
+}
+
+<h2>Cadastrar</h2>
+
+@using (Html.BeginForm())
+{
+    <div class="form-group">
+        @Html.LabelFor(a => a.Rm, "RM")
+        @Html.TextBoxFor(a => a.Rm, new { placeholder = "Digite o RM" , @class = "form-control" })
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(a => a.Nome)
+        @Html.TextBoxFor(a => a.Nome, new { placeholder = "Digite o nome", @class = "form-control" })
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(a => a.Senha)
+        @Html.TextBoxFor(a => a.Senha, new { placeholder = "Digite a senha", @class = "form-control" })
+    </div>
+    <div>
+        <input type="submit" value="Cadastrar" class="btn btn-success"/>
+    </div>
+}

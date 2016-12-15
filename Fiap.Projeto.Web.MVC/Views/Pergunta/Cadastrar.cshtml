@@ -1,0 +1,25 @@
+﻿@model Fiap.Projeto.Web.MVC.ViewModels.PerguntaViewModel
+@{
+    ViewBag.Title = "Cadastrar";
+}
+
+<h2>Cadastrar uma Pergunta</h2>
+
+@using (Html.BeginForm())
+{
+    @Html.HiddenFor(r => r.AlunoRm)
+    <div class="form-group">
+        @Html.LabelFor(r => r.Titulo)
+        @Html.TextBoxFor(r => r.Titulo, new { @class = "form-control" })
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(r => r.Tag)
+        @Html.TextBoxFor(r => r.Tag, new { @class = "form-control" })
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(r => r.Descricao)
+        <br />
+        @Html.TextAreaFor(r => r.Descricao, new { @class = "form-control" })
+    </div>
+    <input type="submit" value="Salvar" class="btn btn-success" />
+}
