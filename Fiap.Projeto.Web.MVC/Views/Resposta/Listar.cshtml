@@ -14,43 +14,24 @@
         </div>
         <div class="col-md-12 box">
             <h3>Descrição</h3>
-            <p class="descricao">@Model.Pergunta.Descricao</p>
             <p class="gray lado">@Model.Pergunta.Data</p>
+            <p class="descricao">@Model.Pergunta.Descricao</p>
         </div>
     </div>
     <div id="idLinha"></div>
-
-    @foreach (var item in Model.Respostas)
-    {
-        <div class="fundo2">
-            <p class="linha">@item.Aluno.Nome</p>
-            <b class="linha">RM @item.AlunoRm</b>
-            <p class="descricao">@item.Descricao</p>
-            <p class="gray lado">@item.Data</p>
-        </div>
-    }
-
-    <table class="table table-striped">
-        <thead>
-            <tr>
-                <th>Autor</th>
-                <th>RM</th>
-                <th>Data</th>
-                <th>Descrição</th>
-            </tr>
-        </thead>
-        <tbody>
-            @foreach (var item in Model.Respostas)
-            {
-                <tr>
-                    <td>@item.Aluno.Nome<d>
-                    <td>@item.AlunoRm</td>
-                    <td>@item.Data</td>
-                    <td>@item.Descricao</td>
-                </tr>
-            }
-        </tbody>
-    </table>
+    <div class="pre-scrollable">
+        @foreach (var item in Model.Respostas)
+        {
+            <div class="fundo2">
+                <div class="container">
+                    <p class="linha">@item.Aluno.Nome</p>
+                    <b class="linha">RM @item.AlunoRm</b>
+                    <p class="gray lado">@item.Data</p>
+                    <p class="descricao">@item.Descricao</p>
+                </div>
+            </div>
+        }
+    </div>
     <div>
         <a href="/Resposta/Cadastrar?id=@Model.Pergunta.Id&&rm=@Model.Pergunta.AlunoRm" class="btn btn-primary">Responder</a>
     </div>

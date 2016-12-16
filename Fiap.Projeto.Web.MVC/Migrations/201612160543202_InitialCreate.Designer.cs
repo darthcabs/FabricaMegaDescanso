@@ -13,7 +13,7 @@ namespace Fiap.Projeto.Web.MVC.Migrations
         
         string IMigrationMetadata.Id
         {
-            get { return "201612160327115_InitialCreate"; }
+            get { return "201612160543202_InitialCreate"; }
         }
         
         string IMigrationMetadata.Source

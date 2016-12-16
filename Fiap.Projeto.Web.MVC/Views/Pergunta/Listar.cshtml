@@ -5,7 +5,7 @@
 
 <div class="container">
 
-    <h2>Perguntas</h2>
+    <h2 class="magenta">Perguntas</h2>
 
     @foreach (var item in Model.Perguntas)
     {
@@ -20,28 +20,5 @@
             </div>
         </div>
     }
-</div>
 
-<table class="table table-striped">
-    <thead>
-        <tr>
-            <th>Autor</th>
-            <th>Rm</th>
-            <th>Data</th>
-            <th>Titulo</th>
-            <th>Tags</th>
-        </tr>
-    </thead>
-    <tbody>
-        @foreach (var item in Model.Perguntas)
-        {
-            <tr>
-                <td>@item.Aluno.Nome<d>
-                <td>@item.AlunoRm</td>
-                <td>@item.Data</td>
-                <td><a href="/Resposta/Listar?id=@item.Id&&rm=@item.AlunoRm">@item.Titulo</a></td>
-                <td>@item.Tag</td>
-            </tr>
-        }
-    </tbody>
-</table>
+</div>

@@ -153,7 +153,9 @@ namespace Fiap.Projeto.Web.MVC.Controllers
             {
                 var user = new ApplicationUser { Rm = model.Rm, UserName = model.FirstName, Email = model.Rm + "@fiap.com.br" };
                 var result = await UserManager.CreateAsync(user, model.Password);
+            
                 _unit.AlunoRepository.Cadastrar(new Aluno() { Rm = model.Rm, Nome = model.FirstName, Senha = model.Password });
+                _unit.Salvar();
 
                 if (result.Succeeded)
                 {

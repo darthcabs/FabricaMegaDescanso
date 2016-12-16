@@ -21,6 +21,10 @@
     color: gray;
 }
 
+.magenta{
+    color: #FF0080;
+}
+
 .lado {
     float:right;
 }
@@ -52,10 +56,11 @@
     padding: 10px;
     background-color: #eee;
     border: solid;
-    border-color: #5e8a95;
+    border-color: rgba(255,0,128,0.5);
     border-radius: 5px;
     height:188px;
     box-shadow: 2px 1px 6px grey;
+    margin-bottom:10px;
 }
 .fundo2{
     background-color: #eee;
