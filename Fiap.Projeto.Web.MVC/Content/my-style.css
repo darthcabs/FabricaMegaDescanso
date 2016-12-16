@@ -42,13 +42,16 @@
 .boxIndex {
     width: 250px;
     height: 50px;
+    margin:1%;
+    padding: 0% 0.5% 0.5% 0.5% ;
+    border-radius: 15px 0px 20px 0px;
     background-color: #FF0080;
     transition: all 1.6s;
 }
 
 .boxIndex:hover {
     width: 100%;
-    border-radius: 0px 20px 20px 0px;
+    border-radius: 0px 15px 0px 20px;
     border-right: 50px dotted transparent;
 }
 
@@ -76,4 +79,10 @@
 
 .linha{
     display: inline-block;
+}
+
+img{
+    width: 80%;
+    height: 60%;
+    padding-left:25%;
 }
