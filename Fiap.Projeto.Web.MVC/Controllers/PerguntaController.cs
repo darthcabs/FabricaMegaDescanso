@@ -64,19 +64,26 @@ namespace Fiap.Projeto.Web.MVC.Controllers
         [HttpPost]
         public ActionResult Cadastrar(PerguntaViewModel perguntaViewModel)
         {
-            var pergunta = new Pergunta()
+            if (ModelState.IsValid)
             {
-                AlunoRm = perguntaViewModel.AlunoRm,
-                Titulo = perguntaViewModel.Titulo,
-                Descricao = perguntaViewModel.Descricao,
-                Data = DateTime.Now,
-                Tag = perguntaViewModel.Tag
-            };
+                var pergunta = new Pergunta()
+                {
+                    AlunoRm = perguntaViewModel.AlunoRm,
+                    Titulo = perguntaViewModel.Titulo,
+                    Descricao = perguntaViewModel.Descricao,
+                    Data = DateTime.Now,
+                    Tag = perguntaViewModel.Tag
+                };
 
-            _unit.PerguntaRepository.Cadastrar(pergunta);
-            _unit.Salvar();
+                _unit.PerguntaRepository.Cadastrar(pergunta);
+                _unit.Salvar();
 
-            return RedirectToAction("Listar");
+                return RedirectToAction("Listar");
+            }
+            else
+            {
+                return View(perguntaViewModel);
+            }
         }
 
         [HttpPost]

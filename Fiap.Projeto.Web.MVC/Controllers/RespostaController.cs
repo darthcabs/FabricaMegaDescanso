@@ -61,19 +61,26 @@ namespace Fiap.Projeto.Web.MVC.Controllers
         {
             ApplicationUser user = GetLoggedUser();
 
-            var resposta = new Resposta()
+            if (ModelState.IsValid)
             {
-                PerguntaId = respostaViewModel.PerguntaId,
-                Autor = respostaViewModel.Autor,
-                AlunoRm = user.Rm,
-                Descricao = respostaViewModel.Descricao,
-                Data = DateTime.Now
-            };
+                var resposta = new Resposta()
+                {
+                    PerguntaId = respostaViewModel.PerguntaId,
+                    Autor = respostaViewModel.Autor,
+                    AlunoRm = user.Rm,
+                    Descricao = respostaViewModel.Descricao,
+                    Data = DateTime.Now
+                };
 
-            _unit.RespostaRepository.Cadastrar(resposta);
-            _unit.Salvar();
+                _unit.RespostaRepository.Cadastrar(resposta);
+                _unit.Salvar();
 
-            return RedirectToAction("Listar", new { id = respostaViewModel.PerguntaId, rm = respostaViewModel.Autor });
+                return RedirectToAction("Listar", new { id = respostaViewModel.PerguntaId, rm = respostaViewModel.Autor });
+            }
+            else
+            {
+                return View(respostaViewModel);
+            }
         }
         #endregion
 
