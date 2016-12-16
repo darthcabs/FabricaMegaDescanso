@@ -16,14 +16,14 @@ namespace Fiap.Projeto.Web.MVC.Controllers
 
         #region Get
         [HttpGet]
-        public ActionResult Cadastrar(int id)
+        public ActionResult Cadastrar(int id,int rm)
         {
             ApplicationUser user = GetLoggedUser();
 
             var respostaViewModel = new RespostaViewModel()
             {
                 PerguntaId = id,
-                Autor = user.Rm
+                Autor = rm
             };
 
             return View(respostaViewModel);
@@ -39,11 +39,11 @@ namespace Fiap.Projeto.Web.MVC.Controllers
         }
 
         [HttpGet]
-        public ActionResult Listar(int id)
+        public ActionResult Listar(int id,int rm)
         {
             ApplicationUser user = GetLoggedUser();
 
-            var pergunta = _unit.PerguntaRepository.BuscarPorChave(id, user.Rm);
+            var pergunta = _unit.PerguntaRepository.BuscarPorChave(id, rm);
 
             var respostaViewModel = new RespostaViewModel()
             {
