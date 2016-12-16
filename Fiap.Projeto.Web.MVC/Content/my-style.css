@@ -22,7 +22,7 @@
 }
 
 .lado {
-    margin-left: 90%;
+    float:right;
 }
 
 .descricao {
@@ -46,4 +46,29 @@
     width: 100%;
     border-radius: 0px 20px 20px 0px;
     border-right: 50px dotted transparent;
+}
+
+.fundo{
+    padding: 10px;
+    background-color: #eee;
+    border: solid;
+    border-color: #5e8a95;
+    border-radius: 5px;
+    height:188px;
+    box-shadow: 2px 1px 6px grey;
+}
+.fundo2{
+    background-color: #eee;
+    border-radius: 5px;
+    margin-top: 8px;
+    margin-bottom : 8px;
+    box-shadow: 2px 1px 6px grey;
+}
+
+.topzero{
+    margin-top:0;
+}
+
+.linha{
+    display: inline-block;
 }

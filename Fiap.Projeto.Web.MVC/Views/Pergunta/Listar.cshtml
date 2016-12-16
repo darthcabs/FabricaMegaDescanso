@@ -1,9 +1,27 @@
-﻿@model Fiap.Projeto.Web.MVC.ViewModels.PerguntaViewModel
+﻿@model OverflowedStack.ViewModels.PerguntaViewModel
 @{
     ViewBag.Title = "Listar";
 }
 
-<h2>Listar</h2>
+<div class="container">
+
+    <h2>Perguntas</h2>
+
+    @foreach (var item in Model.Perguntas)
+    {
+        <div class="fundo">
+            <h3 class="topzero">@item.Titulo</h3>
+            <h4 class="gray">@item.Tag</h4>
+            <p class="linha">@item.Aluno.Nome</p>
+            <b class="linha">RM @item.AlunoRm</b>
+            <p class="gray">@item.Data</p>
+            <div class="lado">
+                <a href="/Resposta/Listar?id=@item.Id&&rm=@item.AlunoRm" class="btn btn-primary linha">Responder</a>
+            </div>
+        </div>
+    }
+</div>
+
 
 <table class="table table-striped">
     <thead>
@@ -23,7 +41,7 @@
                 <td>@item.AlunoRm</td>
                 <td>@item.Data</td>
                 <td><a href="/Resposta/Listar?id=@item.Id&&rm=@item.AlunoRm">@item.Titulo</a></td>
-                <td>@item.Tag</td>         
+                <td>@item.Tag</td>
             </tr>
         }
     </tbody>
