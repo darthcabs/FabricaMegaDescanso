@@ -1,6 +1,9 @@
 ﻿using Fiap.Projeto.Dominio.Models;
 using Fiap.Projeto.Repositories.UnitsOfWork;
+using Fiap.Projeto.Web.MVC.Models;
 using Fiap.Projeto.Web.MVC.ViewModels;
+using Microsoft.AspNet.Identity;
+using Microsoft.AspNet.Identity.EntityFramework;
 using System;
 using System.Web.Mvc;
 
@@ -10,18 +13,19 @@ namespace Fiap.Projeto.Web.MVC.Controllers
     public class PerguntaController : Controller
     {
         private UnitOfWork _unit = new UnitOfWork();
-
-        private static int _id = 1;
         
         #region Get
         [HttpGet]
-        public ActionResult Cadastrar(int rm)
+        public ActionResult Cadastrar()
         {
-            var aluno = _unit.AlunoRepository.BuscarPorId(rm);
+            var store = new UserStore<ApplicationUser>(new ApplicationDbContext());
+            var userManager = new UserManager<ApplicationUser>(store);
+            ApplicationUser user = userManager.FindByNameAsync(User.Identity.Name).Result;
+            
             var perguntaViewModel = new PerguntaViewModel()
             {
-                AlunoRm = rm,
-                NomeAluno = aluno.Nome 
+                AlunoRm = user.Rm,
+                NomeAluno = user.UserName 
             };
 
             return View(perguntaViewModel);
@@ -62,7 +66,6 @@ namespace Fiap.Projeto.Web.MVC.Controllers
         {
             var pergunta = new Pergunta()
             {
-                Id = _id++,
                 AlunoRm = perguntaViewModel.AlunoRm,
                 Titulo = perguntaViewModel.Titulo,
                 Descricao = perguntaViewModel.Descricao,
@@ -79,7 +82,7 @@ namespace Fiap.Projeto.Web.MVC.Controllers
         [HttpPost]
         public ActionResult Alterar(Pergunta pergForm)
         {
-            
+            int i = 2;
 
             return RedirectToAction("Listar");
         }

@@ -7,13 +7,13 @@ namespace Fiap.Projeto.Web.MVC.Migrations
     using System.Resources;
     
     [GeneratedCode("EntityFramework.Migrations", "6.1.3-40302")]
-    public sealed partial class Rm : IMigrationMetadata
+    public sealed partial class InitialCreate : IMigrationMetadata
     {
-        private readonly ResourceManager Resources = new ResourceManager(typeof(Rm));
+        private readonly ResourceManager Resources = new ResourceManager(typeof(InitialCreate));
         
         string IMigrationMetadata.Id
         {
-            get { return "201612160127178_Rm"; }
+            get { return "201612160327115_InitialCreate"; }
         }
         
         string IMigrationMetadata.Source

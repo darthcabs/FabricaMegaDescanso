@@ -9,6 +9,8 @@ using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.Owin;
 using Microsoft.Owin.Security;
 using Fiap.Projeto.Web.MVC.Models;
+using Fiap.Projeto.Repositories.UnitsOfWork;
+using Fiap.Projeto.Dominio.Models;
 
 namespace Fiap.Projeto.Web.MVC.Controllers
 {
@@ -17,6 +19,7 @@ namespace Fiap.Projeto.Web.MVC.Controllers
     {
         private ApplicationSignInManager _signInManager;
         private ApplicationUserManager _userManager;
+        private UnitOfWork _unit = new UnitOfWork();
 
         public AccountController()
         {
@@ -151,8 +154,10 @@ namespace Fiap.Projeto.Web.MVC.Controllers
         {
             if (ModelState.IsValid)
             {
-                var user = new ApplicationUser { UserName = Convert.ToString(model.Rm), Email = model.Rm + "@fiap.com.br" };
+                var user = new ApplicationUser { Rm = model.Rm, UserName = model.FirstName, Email = model.Rm + "@fiap.com.br" };
                 var result = await UserManager.CreateAsync(user, model.Password);
+                _unit.AlunoRepository.Cadastrar(new Aluno() { Rm = model.Rm, Nome = model.FirstName, Senha = model.Password });
+
                 if (result.Succeeded)
                 {
                     await SignInManager.SignInAsync(user, isPersistent:false, rememberBrowser:false);
@@ -402,11 +407,17 @@ namespace Fiap.Projeto.Web.MVC.Controllers
         {
             return View();
         }
-
+        
         protected override void Dispose(bool disposing)
         {
             if (disposing)
             {
+                if (_unit != null)
+                {
+                    _unit.Dispose();
+                    _unit = null;
+                }
+
                 if (_userManager != null)
                 {
                     _userManager.Dispose();

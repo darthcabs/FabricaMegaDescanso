@@ -71,6 +71,10 @@ namespace Fiap.Projeto.Web.MVC.Models
         [Display(Name = "RM")]
         public int Rm { get; set; }
 
+        [Required]
+        [Display(Name = "Primeiro Nome")]
+        public string FirstName { get; set; }
+
         [Display(Name = "Email")]
         public string Email { get; set; }
 
