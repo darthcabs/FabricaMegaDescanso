@@ -20,9 +20,9 @@
           </Key>
           <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="AlunoRm" Type="int" Nullable="false" />
-          <Property Name="Titulo" Type="varchar" MaxLength="25" Nullable="false" />
+          <Property Name="Titulo" Type="varchar" MaxLength="100" Nullable="false" />
           <Property Name="Descricao" Type="text" Nullable="false" />
-          <Property Name="Tag" Type="varchar" MaxLength="25" Nullable="false" />
+          <Property Name="Tag" Type="varchar" MaxLength="50" Nullable="false" />
           <Property Name="Data" Type="datetime" Nullable="false" />
           <Property Name="RespostaEscolhida" Type="int" />
         </EntityType>
@@ -114,9 +114,9 @@
           </Key>
           <Property Name="Id" Type="Int32" Nullable="false" />
           <Property Name="AlunoRm" Type="Int32" Nullable="false" />
-          <Property Name="Titulo" Type="String" MaxLength="25" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Titulo" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="Descricao" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" Nullable="false" />
-          <Property Name="Tag" Type="String" MaxLength="25" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Tag" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="Data" Type="DateTime" Nullable="false" Precision="3" />
           <Property Name="RespostaEscolhida" Type="Int32" />
           <NavigationProperty Name="Aluno" Relationship="Self.FK_Pergunta_Aluno" FromRole="Pergunta" ToRole="Aluno" />

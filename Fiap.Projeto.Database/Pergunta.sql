@@ -2,9 +2,9 @@
 (
 	[Id] INT NOT NULL IDENTITY , 
 	[AlunoRm] INT NOT NULL, 
-    [Titulo] VARCHAR(25) NOT NULL, 
+    [Titulo] VARCHAR(100) NOT NULL, 
     [Descricao] TEXT NOT NULL, 
-    [Tag] VARCHAR(25) NOT NULL, 
+    [Tag] VARCHAR(50) NOT NULL, 
     [Data] DATETIME NOT NULL, 
     [RespostaEscolhida] INT NULL, 
 	PRIMARY KEY ([Id], [AlunoRm]),  
