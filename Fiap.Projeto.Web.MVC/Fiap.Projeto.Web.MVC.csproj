@@ -168,7 +168,6 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="Controllers\AccountController.cs" />
-    <Compile Include="Controllers\AlunoController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
     <Compile Include="Controllers\PerguntaController.cs" />
@@ -276,9 +275,9 @@
       <Project>{8d2abcbb-3079-4275-999c-2547c8859da7}</Project>
       <Name>Fiap.Projeto.Dominio</Name>
     </ProjectReference>
-    <ProjectReference Include="..\Fiap.Projeto.Repositories\Fiap.Projeto.Repositories.csproj">
+    <ProjectReference Include="..\Fiap.Projeto.Repositories\Fiap.Projeto.Persistencia.csproj">
       <Project>{367c8810-f6b5-48fa-9209-e22b3435b29f}</Project>
-      <Name>Fiap.Projeto.Repositories</Name>
+      <Name>Fiap.Projeto.Persistencia</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>

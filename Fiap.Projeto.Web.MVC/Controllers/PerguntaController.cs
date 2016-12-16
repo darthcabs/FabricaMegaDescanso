@@ -1,5 +1,5 @@
 ﻿using Fiap.Projeto.Dominio.Models;
-using Fiap.Projeto.Repositories.UnitsOfWork;
+using Fiap.Projeto.Persistencia.UnitsOfWork;
 using Fiap.Projeto.Web.MVC.Models;
 using Fiap.Projeto.Web.MVC.ViewModels;
 using Microsoft.AspNet.Identity;
@@ -82,8 +82,6 @@ namespace Fiap.Projeto.Web.MVC.Controllers
         [HttpPost]
         public ActionResult Alterar(Pergunta pergForm)
         {
-            int i = 2;
-
             return RedirectToAction("Listar");
         }
         #endregion

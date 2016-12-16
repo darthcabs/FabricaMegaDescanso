@@ -5,7 +5,7 @@ using System.Linq.Expressions;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Fiap.Projeto.Repositories.Repositories
+namespace Fiap.Projeto.Persistencia.Repositories
 {
     public interface IGenericRepository<T>
     {
@@ -15,7 +15,7 @@ namespace Fiap.Projeto.Repositories.Repositories
         void Remover(int id);
         ICollection<T> Listar();
         T BuscarPorId(int id);
+        T BuscarPorChave(int id, int rm);
         ICollection<T> BuscarPor(Expression<Func<T, bool>> filtro);
-
     }
 }

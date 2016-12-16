@@ -1,12 +1,8 @@
 ﻿using Fiap.Projeto.Dominio.Models;
-using OverflowedStack.Models;
-using Fiap.Projeto.Repositories.Repositories;
+using Fiap.Projeto.Persistencia.Repositories;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
 
-namespace Fiap.Projeto.Repositories.UnitsOfWork
+namespace Fiap.Projeto.Persistencia.UnitsOfWork
 {
     public class UnitOfWork : IDisposable
     {
@@ -17,7 +13,7 @@ namespace Fiap.Projeto.Repositories.UnitsOfWork
         private IGenericRepository<Aluno> _alunoRepository;
 
         //Pergunta
-        private IPerguntaRepository _perguntaRepository;
+        private IGenericRepository<Pergunta> _perguntaRepository;
 
         //resposta
         private IGenericRepository<Resposta> _respostaRepository;
@@ -38,13 +34,13 @@ namespace Fiap.Projeto.Repositories.UnitsOfWork
         }
 
         //Pergunta
-        public IPerguntaRepository PerguntaRepository
+        public IGenericRepository<Pergunta> PerguntaRepository
         {
             get
             {
                 if (_perguntaRepository == null)
                 {
-                    _perguntaRepository = new PerguntaRepository(_context);
+                    _perguntaRepository = new GenericRepository<Pergunta>(_context);
                 }
                 return _perguntaRepository;
             }            
@@ -63,9 +59,6 @@ namespace Fiap.Projeto.Repositories.UnitsOfWork
                 return _respostaRepository;
             }
         } 
-
-
-
         #endregion
 
         #region Save Changes

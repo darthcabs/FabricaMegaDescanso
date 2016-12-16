@@ -1,5 +1,4 @@
 ﻿using Fiap.Projeto.Dominio.Models;
-using OverflowedStack.Models;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;

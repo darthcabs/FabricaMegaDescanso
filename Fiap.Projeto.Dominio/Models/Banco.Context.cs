@@ -7,13 +7,12 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace OverflowedStack.Models
+namespace Fiap.Projeto.Dominio.Models
 {
-    using Fiap.Projeto.Dominio.Models;
     using System;
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
-
+    
     public partial class Entidades : DbContext
     {
         public Entidades()

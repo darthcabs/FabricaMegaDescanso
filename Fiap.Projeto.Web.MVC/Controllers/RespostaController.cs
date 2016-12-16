@@ -1,6 +1,9 @@
 ﻿using Fiap.Projeto.Dominio.Models;
-using Fiap.Projeto.Repositories.UnitsOfWork;
+using Fiap.Projeto.Persistencia.UnitsOfWork;
+using Fiap.Projeto.Web.MVC.Models;
 using Fiap.Projeto.Web.MVC.ViewModels;
+using Microsoft.AspNet.Identity;
+using Microsoft.AspNet.Identity.EntityFramework;
 using System;
 using System.Web.Mvc;
 
@@ -10,25 +13,37 @@ namespace Fiap.Projeto.Web.MVC.Controllers
     public class RespostaController : Controller
     {
         private UnitOfWork _unit = new UnitOfWork();
-        private static int _id = 1;
 
         #region Get
         [HttpGet]
-        public ActionResult Cadastrar(int id,int rm)
+        public ActionResult Cadastrar(int id)
         {
+            ApplicationUser user = GetLoggedUser();
+
             var respostaViewModel = new RespostaViewModel()
             {
                 PerguntaId = id,
-                Autor = rm
+                Autor = user.Rm
             };
 
             return View(respostaViewModel);
         }
 
-        [HttpGet]
-        public ActionResult Listar(int id,int rm)
+        private ApplicationUser GetLoggedUser()
         {
-            var pergunta = _unit.PerguntaRepository.BuscarPorChave(id, rm);
+            var store = new UserStore<ApplicationUser>(new ApplicationDbContext());
+            var userManager = new UserManager<ApplicationUser>(store);
+            ApplicationUser user = userManager.FindByNameAsync(User.Identity.Name).Result;
+
+            return user;
+        }
+
+        [HttpGet]
+        public ActionResult Listar(int id)
+        {
+            ApplicationUser user = GetLoggedUser();
+
+            var pergunta = _unit.PerguntaRepository.BuscarPorChave(id, user.Rm);
 
             var respostaViewModel = new RespostaViewModel()
             {
@@ -44,12 +59,13 @@ namespace Fiap.Projeto.Web.MVC.Controllers
         [HttpPost]
         public ActionResult Cadastrar(RespostaViewModel respostaViewModel)
         {
+            ApplicationUser user = GetLoggedUser();
+
             var resposta = new Resposta()
             {
-                Id = _id++,
                 PerguntaId = respostaViewModel.PerguntaId,
                 Autor = respostaViewModel.Autor,
-                AlunoRm = 12345,
+                AlunoRm = user.Rm,
                 Descricao = respostaViewModel.Descricao,
                 Data = DateTime.Now
             };

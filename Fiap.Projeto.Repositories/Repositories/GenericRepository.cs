@@ -1,11 +1,10 @@
-﻿using OverflowedStack.Models;
+﻿using Fiap.Projeto.Dominio.Models;
 using System;
 using System.Collections.Generic;
 using System.Data.Entity;
 using System.Linq;
-using System.Web;
 
-namespace Fiap.Projeto.Repositories.Repositories
+namespace Fiap.Projeto.Persistencia.Repositories
 {
     public class GenericRepository<T> : IGenericRepository<T> where T : class
     {
@@ -32,6 +31,11 @@ namespace Fiap.Projeto.Repositories.Repositories
         public virtual T BuscarPorId(int id)
         {
             return _dbSet.Find(id);
+        }
+
+        public virtual T BuscarPorChave(int id, int rm)
+        {
+            return _dbSet.Find(id, rm);
         }
 
         public virtual void Cadastrar(T entidade)

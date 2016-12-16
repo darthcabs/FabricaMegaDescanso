@@ -3,13 +3,11 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 14
 VisualStudioVersion = 14.0.25420.1
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Fiap.Projeto.Web", "OverflowedStack\Fiap.Projeto.Web.csproj", "{B668C4B4-2E79-469E-BE00-1C694B200FDA}"
-EndProject
 Project("{00D1A9C2-B5F0-4AF3-8072-F6C62B433612}") = "Fiap.Projeto.Database", "Fiap.Projeto.Database\Fiap.Projeto.Database.sqlproj", "{D25D8557-5015-43B4-ABDB-68CB31E566CF}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Fiap.Projeto.Dominio", "Fiap.Projeto.Dominio\Fiap.Projeto.Dominio.csproj", "{8D2ABCBB-3079-4275-999C-2547C8859DA7}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Fiap.Projeto.Repositories", "Fiap.Projeto.Repositories\Fiap.Projeto.Repositories.csproj", "{367C8810-F6B5-48FA-9209-E22B3435B29F}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Fiap.Projeto.Persistencia", "Fiap.Projeto.Repositories\Fiap.Projeto.Persistencia.csproj", "{367C8810-F6B5-48FA-9209-E22B3435B29F}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Fiap.Projeto.Web.MVC", "Fiap.Projeto.Web.MVC\Fiap.Projeto.Web.MVC.csproj", "{C44A8680-B748-449E-B498-6E68953B4BCD}"
 EndProject
@@ -19,10 +17,6 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{B668C4B4-2E79-469E-BE00-1C694B200FDA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{B668C4B4-2E79-469E-BE00-1C694B200FDA}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{B668C4B4-2E79-469E-BE00-1C694B200FDA}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{B668C4B4-2E79-469E-BE00-1C694B200FDA}.Release|Any CPU.Build.0 = Release|Any CPU
 		{D25D8557-5015-43B4-ABDB-68CB31E566CF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{D25D8557-5015-43B4-ABDB-68CB31E566CF}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D25D8557-5015-43B4-ABDB-68CB31E566CF}.Debug|Any CPU.Deploy.0 = Debug|Any CPU

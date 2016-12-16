@@ -22,7 +22,7 @@
             <div class="navbar-collapse collapse">
                 <ul class="nav navbar-nav">
                     <li>@Html.ActionLink("Feed de perguntas", "Listar", "Pergunta")</li>
-                    <li><a href="/Pergunta/Cadastrar?rm=76801">Pergunte você mesmo!</a></li>
+                    <li>@Html.ActionLink("Pergunte você mesmo!", "Cadastrar", "Pergunta")</li>
                 </ul>
                 @Html.Partial("_LoginPartial")
             </div>
