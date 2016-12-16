@@ -176,6 +176,11 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201612160127178_Rm.cs" />
+    <Compile Include="Migrations\201612160127178_Rm.Designer.cs">
+      <DependentUpon>201612160127178_Rm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
@@ -275,6 +280,11 @@
       <Project>{367c8810-f6b5-48fa-9209-e22b3435b29f}</Project>
       <Name>Fiap.Projeto.Repositories</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\201612160127178_Rm.resx">
+      <DependentUpon>201612160127178_Rm.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

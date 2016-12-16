@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 
 namespace Fiap.Projeto.Web.MVC.Models
@@ -49,8 +50,10 @@ namespace Fiap.Projeto.Web.MVC.Models
     public class LoginViewModel
     {
         [Required]
+        [Display(Name = "RM")]
+        public int Rm { get; set; }
+
         [Display(Name = "Email")]
-        [EmailAddress]
         public string Email { get; set; }
 
         [Required]
@@ -65,17 +68,14 @@ namespace Fiap.Projeto.Web.MVC.Models
     public class RegisterViewModel
     {
         [Required]
-        [StringLength(100, ErrorMessage = "{0} deve ter ao menos {2} caracteres.", MinimumLength = 4)]
-        [Display(Name = "Nome")]
-        public string Name { get; set; }
+        [Display(Name = "RM")]
+        public int Rm { get; set; }
 
-        [Required]
-        [EmailAddress]
         [Display(Name = "Email")]
         public string Email { get; set; }
 
         [Required]
-        [StringLength(100, ErrorMessage = "{0} deve ter ao menos {2} caracteres.", MinimumLength = 6)]
+        [StringLength(100, ErrorMessage = "A {0} deve ter ao menos {2} caracteres.", MinimumLength = 6)]
         [DataType(DataType.Password)]
         [Display(Name = "Senha")]
         public string Password { get; set; }

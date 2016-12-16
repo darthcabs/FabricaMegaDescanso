@@ -13,17 +13,21 @@
     @Html.ValidationSummary("", new { @class = "text-danger" })
 
     <div class="form-group">
-        @Html.LabelFor(m => m.Name, new { @class = "col-md-2 control-label" })
+        @Html.LabelFor(m => m.Rm, new { @class = "col-md-2 control-label" })
         <div class="col-md-10">
-            @Html.TextBoxFor(m => m.Name, new { @class = "form-control" })
+            @Html.TextBoxFor(m => m.Rm, new { @class = "form-control" })
         </div>
     </div>
+    
+    <!--
     <div class="form-group">
         @Html.LabelFor(m => m.Email, new { @class = "col-md-2 control-label" })
         <div class="col-md-10">
             @Html.TextBoxFor(m => m.Email, new { @class = "form-control" })
         </div>
     </div>
+    -->
+    
     <div class="form-group">
         @Html.LabelFor(m => m.Password, new { @class = "col-md-2 control-label" })
         <div class="col-md-10">
@@ -38,6 +42,8 @@
     </div>
     <div class="form-group">
         <div class="col-md-offset-2 col-md-10">
+            <input type="hidden" name="email" value="username@email.com" />
+            <input type="hidden" name="name" value="John Doe Smith" />
             <input type="submit" class="btn btn-primary" value="Registrar" />
         </div>
     </div>
